@@ -5,9 +5,12 @@
  */
 #include <exemplo.h>
 
+const struct http_request *current_request = NULL;
+
 void Controller(const struct http_request *request)
 {
 	printf(" URI: %s\r\n", request->uri);
+	current_request = request;
 
 	if (strcmp(request->uri, "/") == 0) {
 		ViewIndex();

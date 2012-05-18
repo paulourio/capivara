@@ -3,7 +3,7 @@
 void ViewIndex()
 {
 	ViewHeaderCompleto();
-	emit("Teste");
+	emit("<div id=\"content\">  </div>\r\n");
 	ViewFooter();
 	build_view();
 }

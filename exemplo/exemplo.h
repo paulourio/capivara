@@ -11,6 +11,7 @@
 #include <mysql.h>
 
 /* Controllers */
+extern const struct http_request *current_request;
 extern void Controller();
 
 /* Views */
