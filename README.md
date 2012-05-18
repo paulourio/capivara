@@ -1,5 +1,5 @@
 Capivara
-==========
+========
 
 Capivara é um web server em C, feito como *trabalho de faculdade*.  Não é 
 um aplicativo estável e, portanto, não deve ser utilizado para aplicações 
@@ -11,6 +11,11 @@ manipuladores (apps hooks) manipuladores de *hosts* registrados.
 
 Capivara apoia a criação de modelos MVC fornecendo uma ViewBuilder.
 A API pode ser encontrada em `capivara.h`.
+
+Licença
+-------
+
+MIT.
 
 Dependências
 ------------
