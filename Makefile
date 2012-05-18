@@ -4,7 +4,9 @@ LDFLAGS=`mysql_config --cflags --libs`
 
 .PHONY=capivara exemplo
 
-default: clean valgrind
+default: all
+
+run: clean valgrind
 
 lib:
 	mkdir lib

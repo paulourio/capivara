@@ -20,9 +20,9 @@ FreeBSD
 Dependências
 ------------
 
- * clang
  * mysql
- * valgrind
+ * clang - *Opcional*, pode ser utilizado o gcc.
+ * valgrind - *Opcional*, não utilizado por padrão.
 
 Execução
 --------
