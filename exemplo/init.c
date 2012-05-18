@@ -2,5 +2,5 @@
 
 void init_exemplo(void)
 {
-	registrar("exemplo:8080", Controller);
+	registrar("www.exemplo.com:8080", Controller);
 }

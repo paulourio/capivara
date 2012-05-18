@@ -7,8 +7,18 @@ void executar_servidor()
 	socklen_t serv_len = sizeof(serv_addr);
 
 	sock = socket(AF_INET, SOCK_STREAM, 0);
-	if (sock < 0)
-	fatal("Erro ao criar socket.\n");
+	if (sock < 0) {
+		fatal("Erro ao criar socket.\n");
+	}
+
+	/* Definimos o socket com SO_REUSEADDR para que o bind não bloqueie
+	 * o programa de ser executado ao reiniciar.
+	 */
+	int valor = 1;
+	if (setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, (char *) &valor,
+			sizeof(valor)) < 0) {
+		debug("Erro ao executar setsockopt.\r\n");
+	}
 
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_addr.s_addr = INADDR_ANY;

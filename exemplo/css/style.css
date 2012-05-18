@@ -225,8 +225,8 @@ img.aligncenter {
 /* Content */
 
 #content {
-	float: right;
-	width: 590px;
+	float: left;
+	width: 920px;
 	padding: 30px 30px 0px 30px;
 	background: #FFFFFF url(images/content-bg-bottom.png) no-repeat left bottom;
 }

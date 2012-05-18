@@ -19,7 +19,7 @@ all: libcapivara.a libexemplo.a main.o
 server.exe: all	
 	
 valgrind: server.exe
-	valgrind ./server.exe
+	valgrind --leak-check=full --show-reachable=yes ./server.exe
 
 .c.o: $<
 	$(CC) $(CFLAGS) -I. -c $< -o $@

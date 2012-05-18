@@ -3,9 +3,16 @@
  *
  * License: FreeBSD
  */
-#include <stdio.h>
+#include <exemplo.h>
 
 void Controller(const struct http_request *request)
 {
-	fprintf(stdout, "Yeah, you hit me, bitch.\r\n");
+	printf(" URI: %s\r\n", request->uri);
+
+	if (strcmp(request->uri, "/") == 0) {
+		ViewIndex();
+		return;
+	}
+
+	ViewNotFound();
 }

@@ -2,6 +2,8 @@
  * registrar.c
  *
  * License: FreeBSD
+ *
+ * TODO: Liberar da memória as apps registradas.
  */
 #include "servidor.h"
 #include "apps.h"

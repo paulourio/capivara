@@ -8,7 +8,7 @@ int realocar(char **ptr, int atual, int novo)
 	debug(" (+ %i bytes)... ", incremento);
 	fflush(stdout);
 
-	char *novoptr = realloc(*ptr, 4);
+	char *novoptr = realloc(*ptr, novo);
 
 	if (novoptr == NULL) {
 		debug("ERRO: Sem memória para alocar.\r\n");
@@ -16,7 +16,6 @@ int realocar(char **ptr, int atual, int novo)
 	}
 	if (novoptr != *ptr) {
 		debug("(%p -> %p)", *ptr, novoptr);
-	} else {
 		*ptr = novoptr;
 	}
 	debug("\r\n");

@@ -9,8 +9,15 @@
 
 #include <capivara.h>
 
-/* controller/controller.c */
+/* Controllers */
 extern void Controller();
+
+/* Views */
+extern void ViewIndex();
+extern void ViewNotFound();
+extern void ViewHeader();
+
+
 /* init.c */
 extern void init_exemplo(void);
 

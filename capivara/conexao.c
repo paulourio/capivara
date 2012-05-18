@@ -2,13 +2,13 @@
 #include "servidor.h"
 #include <capivara.h>
 #include "apps.h"
-#include "view.h"
+
+int conexao;
 
 void escutar_nova_conexao(const int sock)
 {
 	struct sockaddr_in cli_addr;
 	socklen_t cli_len = sizeof(cli_addr);
-	int conexao;
 
 	conexao = accept(sock, (struct sockaddr *) &cli_addr, &cli_len);
 	if (conexao < 0) {
@@ -55,15 +55,10 @@ void escutar_nova_conexao(const int sock)
 	struct http_request *hr;
 
 	hr = analisar_cabecalho(recebido);
+	init_view();
 	despachar(hr);
+	free_view();
 	liberar_cabecalho(hr);
-
-	char resposta[100000] = { 0 };
-	char *msg = create_index_view();
-	sprintf(resposta, "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n"
-			"Content-Length: %lu\r\n\r\n%s", strlen(msg), msg);
-	free(msg);
-	write(conexao, resposta, strlen(resposta));
 
 fim_conexao:
 	free(recebido);
