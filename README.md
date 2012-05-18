@@ -15,7 +15,7 @@ A API pode ser encontrada em `capivara.h`.
 Licença
 -------
 
-MIT.
+FreeBSD
 
 Dependências
 ------------
