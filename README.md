@@ -6,8 +6,11 @@ um aplicativo estável e, portanto, não deve ser utilizado para aplicações
 reais pois não há nenhuma garantia.
 
 Há uma implementação mínima do protocolo HTTP/1.0, encaminhando cada
-cabeçalho receido para 
+cabeçalho recebido para 
 manipuladores (apps hooks) manipuladores de *hosts* registrados.
+
+Capivara apoia a criação de modelos MVC fornecendo uma ViewBuilder.
+A API pode ser encontrada em `capivara.h`.
 
 Dependências
 ------------
