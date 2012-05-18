@@ -12,7 +12,7 @@ void executar_servidor()
 
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_addr.s_addr = INADDR_ANY;
-	serv_addr.sin_port = htons(8083);
+	serv_addr.sin_port = htons(8080);
 
 	if (bind(sock, (struct sockaddr *) &serv_addr, serv_len) < 0)
 	fatal("Erro na função bind()\n");

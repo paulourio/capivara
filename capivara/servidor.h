@@ -16,10 +16,13 @@
 #define ERRO 0
 
 /* memoria.c */
-int realocar(char **ptr, int atual, int novo);
+extern int realocar(char **ptr, int atual, int novo);
 /* servidor.c */
-void executar_servidor(void);
+extern void executar_servidor(void);
 /* conexao.c */
-void escutar_nova_conexao(const int sock);
+extern void escutar_nova_conexao(const int sock);
+/* header_parser.c */
+extern struct http_request *analisar_cabecalho(char *entrada);
+extern void liberar_cabecalho(struct http_request *ptr);
 
 #endif

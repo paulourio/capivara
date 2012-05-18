@@ -1,6 +1,6 @@
 #include "servidor.h"
 
-int main(void)
+int run_capivara(void)
 {
 	executar_servidor();
 	return 0;

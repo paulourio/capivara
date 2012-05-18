@@ -10,11 +10,14 @@
 #include <capivara.h>
 
 struct app {
-	char nome[155];
+	char host[155];
 	capivara_callback callback;
 	struct app *proximo;
 };
 
 extern struct app *lista_apps;
+
+/* dispatcher.c */
+extern void despachar(const struct http_request *request);
 
 #endif /* _APPS_H_ */

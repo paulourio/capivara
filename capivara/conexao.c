@@ -1,5 +1,7 @@
 #include <errno.h>
 #include "servidor.h"
+#include <capivara.h>
+#include "apps.h"
 #include "view.h"
 
 void escutar_nova_conexao(const int sock)
@@ -47,10 +49,14 @@ void escutar_nova_conexao(const int sock)
 		}
 	}
 	recebido[rec_total] = 0; /* Finalizar string */
-
 	if (rec_total < 0)
 		debug("Nada recebido da conexão.");
-	fprintf(stderr, "Recebi:\r\n%s\r\n---\r\n", recebido);
+
+	struct http_request *hr;
+
+	hr = analisar_cabecalho(recebido);
+	despachar(hr);
+	liberar_cabecalho(hr);
 
 	char resposta[100000] = { 0 };
 	char *msg = create_index_view();

@@ -17,11 +17,11 @@ void registrar(char *app, capivara_callback app_metodo)
 		fatal("Não foi possível registrar app %s.\r\n", app);
 		/* Sai do programa. */
 	}
-	strcpy(novo->nome, app);
+	strcpy(novo->host, app);
 	novo->callback = app_metodo;
 	novo->proximo = lista_apps;
 	lista_apps = novo;
-	debug("App registrada (nome=%s, entrada=%p, callback=%p).\r\n",
-			app, novo, app_metodo);
+	debug("App registrada (host=%s, entrada=%p, callback=%p).\r\n",
+			novo->host, novo, app_metodo);
 }
 
