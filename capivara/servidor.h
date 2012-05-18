@@ -28,6 +28,6 @@ extern void liberar_cabecalho(struct http_request *ptr);
 extern void init_view();
 extern void free_view();
 /* injetor.c */
-extern int injetar_arquivo(char *buff, char *arq);
+extern int injetar_arquivo(char *buff, const char *arq);
 
 #endif

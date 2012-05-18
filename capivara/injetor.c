@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int injetar_arquivo(char *buff, char *arq)
+int injetar_arquivo(char *buff, const char *arq)
 {
 	int escrito = 0;
 
@@ -15,7 +15,7 @@ int injetar_arquivo(char *buff, char *arq)
 	filebuff[sizeof(filebuff) - 1] = 0;
 	while ((read = fread(filebuff, sizeof(char), 1024, f)) > 0) {
 		escrito += sprintf(buff + escrito, "%s", filebuff);
-		printf("Escrito %d bytes...\n", escrito);
+		/*printf("Escrito %d bytes...\n", escrito);*/
 	}
 	fclose(f);
 	return escrito;

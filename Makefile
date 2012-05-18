@@ -1,3 +1,7 @@
+CC=clang
+CFLAGS= -I/usr/include/mysql
+LDFLAGS=`mysql_config --cflags --libs`
+
 .PHONY=capivara exemplo
 
 default: clean valgrind
@@ -14,7 +18,7 @@ libexemplo.a: lib
 	cp exemplo/libexemplo.a lib/
 
 all: libcapivara.a libexemplo.a main.o
-	$(CC) main.o -Llib -lexemplo -lcapivara -o server.exe
+	$(CC) $(CFLAGS) $(LDFLAGS) main.o -Llib -lexemplo -lcapivara -o server.exe
 	
 server.exe: all	
 	

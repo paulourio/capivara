@@ -14,5 +14,15 @@ void Controller(const struct http_request *request)
 		return;
 	}
 
+	if (strcmp(request->uri, "/blog") == 0) {
+		ViewBlog();
+		return;
+	}
+
+	if (strcmp(request->uri, "/sobre") == 0) {
+		ViewSobre();
+		return;
+	}
+
 	ViewNotFound();
 }

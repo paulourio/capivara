@@ -2,8 +2,8 @@
 
 void ViewIndex()
 {
-	ViewHeader();
-	emit_arquivo("exemplo/html/index.html");
-	emit_arquivo("exemplo/html/footer.html");
-		build_view();
+	ViewHeaderCompleto();
+	emit("Teste");
+	ViewFooter();
+	build_view();
 }

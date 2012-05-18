@@ -1,0 +1,25 @@
+Configuração do MySQL
+=====================
+
+Adicionando o usuário capivara:
+
+$ mysql --user=root mysql
+mysql> CREATE USER 'capivara'@'localhost' IDENTIFIED BY '123';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'monty'@'localhost' WITH GRANT OPTION;
+mysql> CREATE USER 'capivara'@'%' IDENTIFIED BY '123';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'capivara'@'%' WITH GRANT OPTION;
+
+Criando tabela:
+
+CREATE TABLE post ( autor VARCHAR(50) NOT NULL, titulo VARCHAR(255) NOT NULL, conteudo VARCHAR(10000) NOT NULL );
+
+
+População:
+
+INSERT INTO post VALUES ("Paulo Urio", "Bem vindo ao meu site", "<p>Este é um site feito em <strong>C</strong>, isso mesmo, com um <i>web-service</i> em C e a aplicação toda em C no modelo <a href=\"https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller\">MVC</a>.  É claro que não pretendo fazer com que isso seja uma aplicação real, é apenas uma brincadeira. Apoiando-se nisso, <i>have fun with it</i> :)</p> <p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem.</p>");
+
+INSERT INTO post VALUES ("Paulo Urio", "o dia em que eu programei em java", "<p>Lembro-me como se fosse ontem a primeira vez que eu entrei em contato com a obra do diabo.  Sempre estranhei a popularidade sem sentido do Java, por ser uma linguagem mal elaborada com péssimo desempenho e produtividade incrivelmente baixa.  Dizem que é fácil.  Fácil? Fácil é C.  Até VHDL é mais interessante que Java.</p>");
+
+INSERT INTO post VALUES ("Paulo Urio", "tweet", "<p>Estou indo à cozinha buscar um copo de ovomaltino.</p>");
+
+

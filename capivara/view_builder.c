@@ -73,7 +73,7 @@ void emit(const char *format, ...)
 	int buffer_len = 0;
 
 	va_start(arglist, format);
-	buffer_len = sprintf(buffer, format, arglist);
+	buffer_len = vsprintf(buffer, format, arglist);
 	va_end(arglist);
 
 	if (view.tamanho + buffer_len > view.capacidade - 1)
