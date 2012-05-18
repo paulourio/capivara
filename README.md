@@ -29,6 +29,7 @@ Execução
 
 ```
 make
+./server.exe
 ```
 
 
